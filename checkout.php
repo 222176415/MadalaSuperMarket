@@ -1,8 +1,8 @@
 <?php
 require 'vendor/autoload.php'; // Include Stripe PHP library
 
-// Set your Stripe secret key
-\Stripe\Stripe::setApiKey('sk_test_51QHEsrP3MYvF2ZEreG3zVtdztKAMa464yayTPa5MxJ8yI7pWPW5Kgaw9gMh5mpXPxyYNF9YB1uB4VQvOS4nEFwes00ngsIFW7G'); // Replace with your Stripe secret key
+
+\Stripe\Stripe::setApiKey('sk_test_51QHEsrP3MYvF2ZEreG3zVtdztKAMa464yayTPa5MxJ8yI7pWPW5Kgaw9gMh5mpXPxyYNF9YB1uB4VQvOS4nEFwes00ngsIFW7G'); //Stripe secret key
 
 // Retrieve cart data from a POST request or session (depending on your setup)
 $cartData = json_decode($_POST['cartData'], true);
