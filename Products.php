@@ -40,7 +40,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 <div class="collapse navbar-collapse" id="navbarNav"> <!-- Corrected ID reference -->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="Index.html">Home</a>
+                            <a class="nav-link active" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="Products.html">Products</a>
@@ -87,7 +87,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a href="Index.html" class="nav-link text-dark" style="transition: all 0.3s ease-in-out;">
-                            <i class="fa-solid fa-house" href="Index.html"> </i> Home
+                            <i class="fa-solid fa-house" href="index.html"> </i> Home
                         </a>
                     </li>
                     <li class="nav-item">
