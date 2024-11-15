@@ -544,7 +544,7 @@ form button:hover {
 .map-container:hover .overlay-text {
     opacity: 1;
 }
-.img-fluid{
+.meat{
     border-radius:2px;
     max-width:500px;
 }
