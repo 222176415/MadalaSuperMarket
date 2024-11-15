@@ -529,7 +529,7 @@ form button:hover {
     .map-container img {
     display: block;
     width:200px;
-    height: 500px;
+    height: Auto;
 }}
 .overlay-text {
     position: absolute;
