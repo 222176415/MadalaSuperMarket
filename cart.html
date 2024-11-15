@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/ionicons.min.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/f9fc3e226d.js" crossorigin="anonymous"></script>
+    <title>Madala's SuperMarket | Products page</title>
+</head>
+
+<body style="background-color: #FFE5B4;">
+    <!-- Header Section -->
+    <header id="Header" style="background-color: #FFE5B4;">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="Index.html"><img src="Images/CompanyLogo.png" width="auto" height="85px"
+                        alt="Madala's SuperMarket logo" style="font-weight: 500;">Madala's SuperMarket</a>
+                <!-- Toggle button for mobile nav -->
+                <button class="navbar-toggler border-0" style="color: black;" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="background-color: transparent;"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <i class="fa-regular fa-user"></i>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <hr>
+        </nav>
+
+        <!-- Navbar Links -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="main-nav" aria-labelledby="offcanvasNavbarLabel"
+            style="background-color: #FFE5B4;">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-dark" id="offcanvasNavbarLabel">Madala's SuperMarket | Explore More
+                    Products</h5>
+                <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark" style="transition: all 0.3s ease-in-out;">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Products.html" class="nav-link text-dark" style="transition: all 0.3s ease-in-out;">
+                            <i class="fa-brands fa-product-hunt"></i> Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#About" class="nav-link text-dark" style="transition: all 0.3s ease-in-out;">
+                            <i class="fa-solid fa-circle-info"></i> About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark" style="transition: all 0.3s ease-in-out;">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Section -->
+    <main class="container mt-4">
+        <h1 class="text-center">My Cart</h1>
+        <div class="small-container cart-page">
+            <h2 style="color: black;">Shopping Cart</h2>
+            <div id="cart-table-container">
+                <table>
+                    <tbody id="cart-table-body"></tbody>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Display</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td id="cart-total" colspan="2">Total: R0.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <form id="checkout-form" action="checkout.php" method="post">
+            <input type="hidden" name="cartData" id="cartData">
+            <center><button class="button" type="submit" onclick="prepareCheckout()">Complete order</button></center>
+        </form>
+        
+        <hr>
+    </main>
+    <!----For Bootsrap Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        // Function to update the cart display
+        function updateCartDisplay() {
+            // Retrieve cart data from local storage
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Get the tbody element where the cart items will be displayed
+            var cartTableBody = document.getElementById('cart-table-body');
+
+            // Clear existing table rows
+            cartTableBody.innerHTML = '';
+
+            // Iterate through the cart data and add rows to the table
+            cartData.forEach(function (item, index) {
+                var row = cartTableBody.insertRow();
+
+                // Add cells for product name, image, quantity, price, and remove button
+                var productNameCell = row.insertCell(0);
+                var imageCell = row.insertCell(1);
+                var quantityCell = row.insertCell(2);
+                var priceCell = row.insertCell(3);
+                var removeCell = row.insertCell(4);
+
+                // Set the content for each cell
+                productNameCell.textContent = item.name;
+
+                // Check if the image URL is defined
+                if (item.image) {
+                    // Set the image cell content with proper error checking
+                    try {
+                        imageCell.innerHTML = `<img src="${item.image}" width="50" height="50">`;
+                    } catch (error) {
+                        console.error(`Error loading image for item at index ${index}: ${error.message}`);
+                        imageCell.textContent = 'Image Error';
+                    }
+                } else {
+                    // Log an error if the image URL is undefined
+                    console.error(`Image URL is undefined for item at index ${index}`);
+                    imageCell.textContent = 'Image Not Found';
+                }
+
+                quantityCell.innerHTML = `
+                    <button onclick="changeQuantity(this, -1)">-</button>
+                    ${item.quantity}
+                    <button onclick="changeQuantity(this, 1)">+</button>`;
+                priceCell.textContent = `R${(item.price * item.quantity).toFixed(2)}`;
+                removeCell.innerHTML = '<button onclick="removeFromCart(this)">Remove</button>';
+            });
+
+            // Update the total in the footer
+            updateCartTotal();
+        }
+
+        // Function to update the total in the footer
+        function updateCartTotal() {
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            var cartTotalElement = document.getElementById('cart-total');
+            var total = 0;
+
+            cartData.forEach(function (item) {
+                total += item.price * item.quantity;
+            });
+
+            cartTotalElement.textContent = `Total: R${total.toFixed(2)}`;
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(button) {
+            var row = button.parentNode.parentNode;
+            var productName = row.cells[0].textContent;
+
+            // Retrieve cart data from local storage
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Remove the item from the cart data
+            cartData = cartData.filter(function (item) {
+                return item.name !== productName;
+            });
+
+            // Save the updated cart data back to local storage
+            localStorage.setItem('cart', JSON.stringify(cartData));
+
+            // Update the cart display
+            updateCartDisplay();
+        }
+
+        // Function to change the quantity of an item in the cart
+        function changeQuantity(button, change) {
+            var row = button.parentNode.parentNode;
+            var productName = row.cells[0].textContent;
+
+            // Retrieve cart data from local storage
+            var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Find the item in the cart data
+            var item = cartData.find(function (item) {
+                return item.name === productName;
+            });
+
+            // Update the quantity
+            if (item) {
+                item.quantity += change;
+                if (item.quantity < 1) {
+                    item.quantity = 1; // Ensure quantity doesn't go below 1
+                }
+            }
+
+            // Save the updated cart data back to local storage
+            localStorage.setItem('cart', JSON.stringify(cartData));
+
+            // Update the cart display
+            updateCartDisplay();
+        }
+
+        // Update the cart display when the page loads
+        window.onload = updateCartDisplay;
+    </script>
+    <footer style="background-color: #FFE5B4;">
+        <div class="container">
+            <div class="footer-content row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                <div class="col">
+                    <div class="logo">
+                        <img src="Images/CompanyLogo.png" class="logo" alt="Madala's SuperMarket Logo">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="useful-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><a href="Index.html">Home</a></li>
+                            <li><a href="Products.html">Products</a></li>
+                            <li><a href="Contact.html">Contact Us</a></li>
+                            <li><a href="Login.html">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <ul>
+                            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i>
+                                    Facebook</a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i>
+                                    Instagram</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="contact-info">
+                        <h4>Contact Information</h4>
+                        <p>Phone: 069 169 4456 / 083 652 1964</p>
+                        <p>Email:<a href="mailto:MadalaSuperMarket@gmail.com">MadalaSuperMarket@gmail.com</a></p>
+                        <p>Address: 8 Cassandra Ave, Bedworth Park, Vereeniging, 1939</p>
+                    </div>
+                </div>
+                <p style="margin: 10px 0; color: #666;">Your one-stop shop for all your grocery needs!</p>
+                <p style="margin: 10px 0; color: #666;">We offer fresh produce, quality products, and unbeatable prices.
+                </p>
+            </div>
+            <p class="text-center">&copy; 2024 Madala's SuperMarket. All rights reserved.</p>
+            <hr style="border: 1px solid #000000; width: 80%; margin: 20px auto;">
+        </div>
+    </footer>
+</body>
+
+</html>

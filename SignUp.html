@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/ionicons.min.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/f9fc3e226d.js" crossorigin="anonymous"></script>
+    <title>Madala's SuperMarket | Sign Up for A new Account</title>
+
+</head>
+
+<body style="background-color: #FFE5B4;">
+    <!-- Header Section -->
+    <header id="Header" style="background-color: #FFE5B4;">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                  <!-- Add The Clickable Logo to the Home Page -->
+                  <a class="navbar-brand" href="Index.html"><img src="Images/CompanyLogo.png" width="auto" height="85px"
+                        alt="Madala's SuperMarket logo" style="font-weight: 500;">Madala's SuperMarket</a>
+                <!-- Toggle button for mobile nav -->
+                <button class="navbar-toggler border-0" style="color: black;" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="background-color: transparent;"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Products.html">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="AboutUs.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact.html">Contact Us</a>
+                        </li>
+                        <li>
+                            <button class="btn-lg" type="button">
+                                <a href="Login.html">Login</a>
+                            </button>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <hr>
+        </nav>
+
+        <!-- Navbar Links -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="main-nav" aria-labelledby="offcanvasNavbarLabel"
+            style="background-color: #FFE5B4;">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-dark" id="offcanvasNavbarLabel">Madala's SuperMarket | Madala got your
+                    Back!</h5>
+                <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-dark" style="transition: all 0.3s ease-in-out;">
+                            <i class="fa-solid fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Products.html" class="nav-link text-dark" style="transition: all 0.3s ease-in-out;">
+                            <i class="fa-brands fa-product-hunt"></i> Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a hre6f="#About" class="nav-link text-dark" style="transition: all 0.3s ease-in-out;">
+                            <i class="fa-solid fa-circle-info"></i> About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Login.html" class="nav-link text-dark" style="transition: all 0.3s ease-in-out;">
+                            <i class="fa-regular fa-user"></i>Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container mt-4">
+        <section style="margin-top: 100px;">
+            <div class="container justify-content-center align-items-center mini-vh-100 login"
+                style="border-radius: 5px;">
+                <div class="row border rounder-5 p-3 bg-white shadow box-area">
+                    <div class="col-md-6 rounder-4 d-flex justify-content-center align-items-center flex-column left-box"
+                        style="background-color:#FFE5B4;">
+                        <div class="featured-image mb-3">
+                            <img src="Images/Sign up-bro.svg" alt="" class="img-fluid;" style="width:250px;">
+                        </div>
+                    </div>
+                    <form class="col-md-6 right-box" action="SignUp.php" method="post">
+                        <div class="row align-items-center">
+                            <div class="header-text mb-4"></div>
+                            <h1>Sign Up</h1>
+                            <p>New Users Get FREE Delivery for the first Order...Sign Up NOW!</p>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <input type="text" name="username" id="username" placeholder="Username" required
+                                class="form-control form-control-lg bg-light fs-6">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email"
+                                name="email">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6" name="password"
+                                placeholder="Password" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <button type="submit" class="btn btn-lg w-100 fs-6"
+                                style="border-color: #666; background-color: #FFE5B4; align-content: center;">Sign
+                                Up</button>
+                        </div>
+                        <div class="row">
+                            <small>Have an Account ? <a href="Login.html"> Log In</a></small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <hr style="border: 1px solid #000000; width: 80%; margin: 20px auto;">
+        <footer>
+            <div class="container">
+                <div class="footer-content row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                    <div class="col">
+                        <div class="logo">
+                            <img src="Images/CompanyLogo.png" class="logo" alt="Madala's SuperMarket Logo">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="useful-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><a href="Index.html">Home</a></li>
+                            <li><a href="Products.html">Products</a></li>
+                            <li><a href="Contact.html">Contact Us</a></li>
+                            <li><a href="Login.html">Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="social-links">
+                            <h4>Follow Us</h4>
+                            <ul>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i>
+                                        Facebook</a></li>
+                                <li><a href="https://www.instagram.com/" target="_blank"><i
+                                            class="fab fa-instagram"></i>
+                                        Instagram</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="contact-info">
+                            <h4>Contact Information</h4>
+                            <p>Phone: 069 169 4456 / 083 652 1964</p>
+                            <p>Email:<a href="mailto:MadalaSuperMarket@gmail.com">MadalaSuperMarket@gmail.com</a></p>
+                            <p>Address: 8 Cassandra Ave, Bedworth Park, Vereeniging, 1939</p>
+                        </div>
+                    </div>
+                    <p style="margin: 10px 0; color: #666;">Your one-stop shop for all your grocery needs!</p>
+                    <p style="margin: 10px 0; color: #666;">We offer fresh produce, quality products, and unbeatable
+                        prices.
+                    </p>
+                </div>
+                <p class="text-center">&copy; 2024 Madala's SuperMarket. All rights reserved.</p>
+                <hr style="border: 1px solid #000000; width: 80%; margin: 20px auto;">
+            </div>
+        </footer>
+        <!----For Bootsrap Javascript-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+
+</html>
