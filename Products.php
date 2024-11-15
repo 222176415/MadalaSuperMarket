@@ -29,7 +29,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
     <header id="Header">
         <nav class="navbar navbar-expand-lg " style="background-color: #FFE5B4;">
             <div class="container-fluid">
-            <a class="navbar-brand" href="Index.html"><img src="Images/CompanyLogo.png" width="auto" height="85px"
+            <a class="navbar-brand" href="index.html"><img src="Images/CompanyLogo.png" width="auto" height="85px"
                         alt="Madala's SuperMarket logo" style="font-weight: 500;">Madala's SuperMarket</a>
                 <!-- Toggle button for mobile nav -->
                 <button class="navbar-toggler border-0" style="color: black;" type="button" data-bs-toggle="offcanvas"
@@ -836,7 +836,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
                     <div class="useful-links">
                         <h4>Useful Links</h4>
                         <ul>
-                             <li><a href="Index.html">Home</a></li>
+                             <li><a href="index.html">Home</a></li>
                             <li><a href="Products.html">Products</a></li>
                             <li><a href="Contact.html">Contact Us</a></li>
                             <li><a href="Login.html">Login</a></li>
