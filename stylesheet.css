@@ -546,4 +546,5 @@ form button:hover {
 }
 .img-fluid{
     border-radius:2px;
+    max-width:500px;
 }
