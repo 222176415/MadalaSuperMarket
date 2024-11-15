@@ -195,6 +195,56 @@
                         </div>
                     </div>
                   </div>
+                   <section style="background-color: #FFE5B4; margin-top: 0px;">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col">
+                        <div class="contact-info">
+                            <h4>Contact Information</h4>
+                            <br>
+                            <i class="fa-solid fa-phone" style="margin-top: 5px; padding-top: 5px; "> </i><a> 069 169 4456 / 083 652 1964</a>
+                           <br>
+                           <i class="fa-solid fa-envelope" style="margin-top: 5px; padding-top: 5px; "> </i><a href="mailto:MadalaSuperMarket@gmail.com"> MadalaSuperMarket@gmail.com</a>
+                           <br >
+                            <i class="fa-solid fa-home" style="margin-top: 5px; padding-top: 5px; "> </i><a> 8 Cassandra Ave, Bedworth Park, Vereeniging, 1939</a>
+                        </div>
+                </div>
+                <div class="col">
+                       <div class="card-body">
+                                <form id="contact-form" method="POST" action="sendmail.php">
+                                    <div>
+                                        <label for="name">Full Name:</label>
+                                        <input type="text" id="full_name" name="full_name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                                    </div>
+                                    <div>
+                                        <label for="email">Email:</label>
+                                        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                                    </div>
+                                    <div>
+                                        <label for="Regarding">Regarding:</label>
+                                        <select name="Regarding" id="Regarding" required
+                                            title="Please select the purpose of your contact"
+                                            style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                                            <option value=">Product Return">Product Return</option>
+                                            <option value="Late Delivery">Late Delivery</option>
+                                            <option value="Order Issue">Order Issue</option>
+                                            <option value="Payment Problem">Payment Problem</option>
+                                            <option value="GeneralEquiry">General Equiry </option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label for="message">Message:</label>
+                                        <textarea id="message" name="message" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                                    </div>
+                                    <button type="submit" name="submitContact" class="button">Submit</button>
+                                </form>
+                            </div>
+        
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
                   <div class="row1">
                     <br><br><br><br>
                     <center>
